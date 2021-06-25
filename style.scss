@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+$base-color: #47b27a;
+
+body {
+  font: 400 16px "Nunito", sans-serif;
+  margin:0;
+}
+.header {
+  background: $base-color;
+  height: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+.carousel-cell {
+  background-color: #efefef;
+  width: 300px;
+  height: 300px;
+}
+
+/**
+ * ==============================================
+ * Dot Flashing loader
+ * ==============================================
+ */
+.loader {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 140px auto 0;
+  border-radius: 5px;
+  background-color: $base-color;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.loader::before, .loader::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: $base-color;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.loader::before {
+  left: -15px;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.loader::after {
+  left: 15px;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: $base-color;
+  }
+  50%,
+  100% {
+    background-color: rgba( $base-color, .3 )
+  }
+}

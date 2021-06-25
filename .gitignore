@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+
+# Webpack build output
+build/
+
+# IntelliJ’s settings
+.idea/
